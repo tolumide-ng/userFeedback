@@ -1,12 +1,14 @@
-interface InputProps {
+import React from "react";
+
+interface TextAreaProps {
     name: string;
-    required: boolean;
     placeholder: string;
-    type: React.HTMLInputTypeAttribute;
     value: string;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    disabled?: boolean;
+    cols?: number;
+    rows?: number;
+    onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
     error?: string;
+    disabled: boolean;
     classes?: {
         wrapperClass?: string;
         subjectClass?: string;
@@ -14,27 +16,27 @@ interface InputProps {
     };
 }
 
-export const Input = ({
+export const TextArea = ({
     name,
-    required,
     placeholder,
-    type,
     value,
+    cols = 30,
+    rows = 10,
     onChange,
+    error,
     disabled = false,
     classes,
-    error,
-}: InputProps) => {
+}: TextAreaProps) => {
     return (
         <div className={classes?.wrapperClass}>
-            <input
+            <textarea
                 name={name}
-                type={type}
-                value={value}
-                placeholder={placeholder}
-                required={required}
+                cols={cols}
+                rows={rows}
                 onChange={onChange}
                 className={classes?.subjectClass}
+                placeholder={placeholder}
+                value={value}
                 disabled={disabled}
             />
             {error ? <p className={classes?.errorClass}>{error}</p> : null}
