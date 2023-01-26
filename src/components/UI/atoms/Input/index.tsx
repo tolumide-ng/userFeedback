@@ -5,8 +5,13 @@ interface InputProps {
     type: React.HTMLInputTypeAttribute;
     value: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    inputClassName?: string;
     disabled?: boolean;
+    error?: string;
+    classes?: {
+        wrapperClass?: string;
+        inputClass?: string;
+        errorClass?: string;
+    };
 }
 
 export const Input = ({
@@ -16,19 +21,23 @@ export const Input = ({
     type,
     value,
     onChange,
-    inputClassName,
     disabled = false,
+    classes,
+    error,
 }: InputProps) => {
     return (
-        <input
-            name={name}
-            type={type}
-            value={value}
-            placeholder={placeholder}
-            required={required}
-            onChange={onChange}
-            className={inputClassName}
-            disabled={disabled}
-        />
+        <div className={classes?.wrapperClass}>
+            <input
+                name={name}
+                type={type}
+                value={value}
+                placeholder={placeholder}
+                required={required}
+                onChange={onChange}
+                className={classes?.inputClass}
+                disabled={disabled}
+            />
+            {error ? <p className={classes?.errorClass}>{error}</p> : null}
+        </div>
     );
 };

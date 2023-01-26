@@ -7,6 +7,7 @@ describe("Input", () => {
         onChange = jest.fn(),
         disabled = false,
         value = "",
+        error = "",
     }) => ({
         name: "email",
         required: true,
@@ -15,6 +16,7 @@ describe("Input", () => {
         value,
         onChange,
         disabled,
+        error,
     });
 
     it("should render the component", () => {
@@ -49,5 +51,15 @@ describe("Input", () => {
         expect(mockOnChange).not.toHaveBeenCalled();
         await user.type(screen.getByRole("textbox"), "sampleemail@example.com");
         expect(mockOnChange).not.toHaveBeenCalled();
+    });
+
+    it("should display an error message if it is present", () => {
+        const errorMessage = "Please provide a valid email";
+
+        const props = getProps({ error: errorMessage });
+
+        render(<Input {...props} />);
+
+        expect(screen.getByText(errorMessage)).toBeVisible();
     });
 });
