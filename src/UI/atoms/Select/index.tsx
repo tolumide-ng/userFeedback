@@ -6,6 +6,9 @@ interface SelectOptionProps {
     options: Array<string | number>;
     name: string;
     label: string;
+    error?: string;
+    disabledOption: string | number | null;
+    value: string | number;
 }
 
 export const SelectOption = ({
@@ -13,6 +16,8 @@ export const SelectOption = ({
     options,
     name,
     label,
+    error,
+    disabledOption,
 }: SelectOptionProps) => {
     return (
         <div className={styles.selectWrapper}>
@@ -20,13 +25,25 @@ export const SelectOption = ({
                 {label}
             </label>
 
-            <select className={styles.select} onChange={onChange}>
+            <select
+                className={`${styles.select} ${
+                    error ? styles.selectErrorSelect : ""
+                }`}
+                onChange={onChange}
+                name={name}
+            >
+                {disabledOption !== null ? (
+                    <option value={disabledOption}>{disabledOption}</option>
+                ) : null}
+
                 {options.map((value) => (
                     <option value={value} key={value}>
                         {value}
                     </option>
                 ))}
             </select>
+
+            {error ? <p className={styles.selectError}>{error}</p> : null}
         </div>
     );
 };

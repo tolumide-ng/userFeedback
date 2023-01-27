@@ -1,5 +1,5 @@
 import * as React from "react";
-import { FeedbackInputWithRating } from "../../../Pages/Home/useHome";
+import { FeedbackInputWithRating } from "../../../components/Pages/Home/useHome";
 import { Button } from "../../atoms/Button";
 import { Input } from "../../atoms/Input";
 import { SelectOption } from "../../atoms/Select";
@@ -51,6 +51,9 @@ export const FeedbackForm = ({
                     onChange={onChange}
                     name="rating"
                     label="Rating"
+                    disabledOption={0}
+                    error={feedback.rating.error}
+                    value={feedback.rating.value}
                 />
             </div>
             <div className={styles.feedbackRight}>

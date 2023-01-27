@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { CommentsPage } from "./components/Pages/Comments";
 import { HomePage } from "./components/Pages/Home";
 import { ContextProvider } from "./components/store";
-import { PageWrapper } from "./components/UI/templates/PageWrapper";
+import { PageWrapper } from "./UI/templates/PageWrapper";
 import "./index.css";
 
 const root = ReactDOM.createRoot(
@@ -14,10 +15,9 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <PageWrapper />,
-        // errorElement: <></>,
         children: [
-            { path: "", id: "home", element: <HomePage /> },
-            { path: "/comments", id: "comments", element: <>I am here now</> },
+            { path: "", element: <HomePage /> },
+            { path: "/comments", element: <CommentsPage /> },
         ],
     },
 ]);

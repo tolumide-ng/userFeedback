@@ -1,5 +1,6 @@
 .feedback {
     --form-gap: 3rem;
+    --form-content-w: 50%;
 
     display: flex;
     width: 100%;
@@ -13,9 +14,15 @@
     justify-content: flex-end;
 }
 
-@media screen and (max-width: 850px) {
+.feedbackLeft,
+.feedbackRight {
+    width: var(--form-content-w);
+}
+
+@media screen and (max-width: 600px) {
     .feedback {
         flex-direction: column;
         --form-gap: 1rem;
+        --form-content-w: 100%;
     }
 }

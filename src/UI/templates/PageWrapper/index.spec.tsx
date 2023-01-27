@@ -11,7 +11,5 @@ describe("PageWrapper", () => {
         );
 
         expect(screen.getByText("Feedback Form")).toBeVisible();
-        // expect(screen.getAllByRole("textbox")).toHaveLength(4);
-        // expect(screen.getByRole("button")).toBeVisible();
     });
 });

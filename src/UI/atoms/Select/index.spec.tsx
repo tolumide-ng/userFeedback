@@ -8,6 +8,8 @@ describe("SelectOption", () => {
         options: [1, 2, 3, 4],
         name: "select option",
         label: "label text",
+        disabledOption: null,
+        value: 5,
     });
 
     it("should render the component", () => {

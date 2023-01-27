@@ -1,5 +1,4 @@
-import * as React from "react";
-import { FeedbackForm } from "../../UI/organisms/FeedbackForm";
+import { FeedbackForm } from "../../../UI/organisms/FeedbackForm";
 import { useHome } from "./useHome";
 
 export const HomePage = () => {

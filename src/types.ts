@@ -5,8 +5,17 @@ export interface Feedback {
     comment: string;
 }
 
-export interface BasicAtomicClass {
+export type FeedbackWithId = Feedback & { id: string };
+
+export type BasicAtomicClass = {
     wrapperClass?: string;
     subjectClass?: string;
     errorClass?: string;
-}
+};
+
+export type Distribution = {
+    name: string;
+    percentage: number;
+    value: number;
+    total: number;
+};

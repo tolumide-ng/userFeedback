@@ -6,7 +6,7 @@
 
 .textArea {
     height: 11.5rem;
-    width: 20rem;
+    width: 100%;
     padding: 0.5rem;
     border: 1px solid var(--uc-color-black);
     border-radius: var(--uc-border-radius);

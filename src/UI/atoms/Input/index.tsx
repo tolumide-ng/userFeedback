@@ -1,4 +1,4 @@
-import { BasicAtomicClass } from "../../../../types";
+import { BasicAtomicClass } from "../../../types";
 import styles from "./index.module.css";
 
 interface InputProps {
