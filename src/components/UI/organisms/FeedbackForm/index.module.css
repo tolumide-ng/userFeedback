@@ -1,0 +1,21 @@
+.feedback {
+    --form-gap: 3rem;
+
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: var(--form-gap);
+}
+
+.feedbackAction {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+@media screen and (max-width: 850px) {
+    .feedback {
+        flex-direction: column;
+        --form-gap: 1rem;
+    }
+}

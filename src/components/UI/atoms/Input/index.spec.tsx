@@ -17,6 +17,7 @@ describe("Input", () => {
         onChange,
         disabled,
         error,
+        label: "email",
     });
 
     it("should render the component", () => {

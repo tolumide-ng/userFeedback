@@ -1,12 +1,11 @@
 .page {
-    --page-padding: 10rem;
     display: flex;
     justify-content: center;
 }
 
 .pageWrapper {
     width: calc(100vw - var(--page-padding));
-    padding-top: 2rem;
+    padding: 2rem 0;
 }
 
 .pageHeader {

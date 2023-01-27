@@ -1,14 +1,17 @@
-import React from "react";
+import * as React from "react";
+import styles from "./index.module.css";
 
 interface TextAreaProps {
     name: string;
-    placeholder: string;
+    placeholder?: string;
     value: string;
     cols?: number;
     rows?: number;
+    label: string;
     onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
     error?: string;
-    disabled: boolean;
+    disabled?: boolean;
+    ariaLabel?: string;
     classes?: {
         wrapperClass?: string;
         subjectClass?: string;
@@ -26,20 +29,33 @@ export const TextArea = ({
     error,
     disabled = false,
     classes,
+    label,
+    ariaLabel,
 }: TextAreaProps) => {
     return (
-        <div className={classes?.wrapperClass}>
+        <div className={`${styles.textAreaWrapper} ${classes?.wrapperClass}`}>
+            <label className={styles.textAreaLabel} htmlFor={name}>
+                {label}
+            </label>
+
             <textarea
                 name={name}
                 cols={cols}
                 rows={rows}
                 onChange={onChange}
-                className={classes?.subjectClass}
+                className={`${styles.textArea} ${classes?.subjectClass} ${
+                    error ? styles.textAreaError : ""
+                }`}
                 placeholder={placeholder}
                 value={value}
                 disabled={disabled}
+                aria-label={ariaLabel}
             />
-            {error ? <p className={classes?.errorClass}>{error}</p> : null}
+            {error ? (
+                <p className={`${styles.textAreaError} ${classes?.errorClass}`}>
+                    {error}
+                </p>
+            ) : null}
         </div>
     );
 };

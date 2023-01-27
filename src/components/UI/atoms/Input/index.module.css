@@ -1,0 +1,29 @@
+.inputWrapper {
+    margin-bottom: 1rem;
+}
+
+.input {
+    height: 2.1rem;
+    padding: 0.5rem;
+    width: 100%;
+    border: 1px solid var(--uc-color-black);
+    border-radius: var(--uc-border-radius);
+    margin-top: 0.2rem;
+}
+
+.input.inputErrorInput {
+    border: 1px solid var(--uc-color-red);
+}
+
+.inputError {
+    font-size: 0.65rem;
+    font-weight: light;
+    margin-top: 0.1rem;
+    padding-left: 0.5rem;
+    color: var(--uc-color-red);
+}
+
+.inputLabel {
+    font-size: 0.8rem;
+    padding-left: 0.2rem;
+}

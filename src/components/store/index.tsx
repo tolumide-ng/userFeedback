@@ -1,7 +1,7 @@
 import * as React from "react";
-import { UserCommentsProvider } from "./userComments";
+import { UserFeedbackProvider } from "./userFeedback";
 
-const providers = [UserCommentsProvider];
+const providers = [UserFeedbackProvider];
 
 export const ContextProvider = ({ children }: React.PropsWithChildren) => (
     <>

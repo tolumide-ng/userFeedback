@@ -1,5 +1,18 @@
 import * as React from "react";
+import { FeedbackForm } from "../../UI/organisms/FeedbackForm";
+import { useHome } from "./useHome";
 
 export const HomePage = () => {
-    return <>say something about me</>;
+    const { onChange, feedback, onSubmit, ratingOptions } = useHome();
+
+    return (
+        <article>
+            <FeedbackForm
+                onChange={onChange}
+                feedback={feedback}
+                onSubmit={onSubmit}
+                ratingOptions={ratingOptions}
+            />
+        </article>
+    );
 };

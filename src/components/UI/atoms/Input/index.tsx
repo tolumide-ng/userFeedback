@@ -1,30 +1,39 @@
 import { BasicAtomicClass } from "../../../../types";
+import styles from "./index.module.css";
 
 interface InputProps {
     name: string;
-    required: boolean;
-    placeholder: string;
+    required?: boolean;
+    placeholder?: string;
     type: React.HTMLInputTypeAttribute;
     value: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     disabled?: boolean;
     error?: string;
     classes?: BasicAtomicClass;
+    label: string;
+    ariaLabel?: string;
 }
 
 export const Input = ({
     name,
-    required,
     placeholder,
     type,
     value,
     onChange,
-    disabled = false,
     classes,
     error,
+    disabled = false,
+    required = false,
+    label,
+    ariaLabel,
 }: InputProps) => {
     return (
-        <div className={classes?.wrapperClass}>
+        <div className={`${styles.inputWrapper} ${classes?.wrapperClass}`}>
+            <label className={styles.inputLabel} htmlFor={name}>
+                {label}
+            </label>
+
             <input
                 name={name}
                 type={type}
@@ -32,10 +41,17 @@ export const Input = ({
                 placeholder={placeholder}
                 required={required}
                 onChange={onChange}
-                className={classes?.subjectClass}
+                aria-label={ariaLabel}
+                className={`${styles.input} ${classes?.subjectClass} ${
+                    error ? styles.inputErrorInput : ""
+                }`}
                 disabled={disabled}
             />
-            {error ? <p className={classes?.errorClass}>{error}</p> : null}
+            {error ? (
+                <p className={`${styles.inputError} ${classes?.errorClass}`}>
+                    {error}
+                </p>
+            ) : null}
         </div>
     );
 };

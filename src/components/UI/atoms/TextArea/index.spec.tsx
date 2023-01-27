@@ -14,6 +14,7 @@ describe("TextArea", () => {
         onChange,
         error,
         disabled,
+        label: "Comment",
     });
 
     it("should render the textArea component", () => {
