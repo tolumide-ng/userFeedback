@@ -1,5 +1,6 @@
-export type ButtonType = "submit" | "button" | "reset";
+import styles from "./index.module.css";
 
+export type ButtonType = "submit" | "button" | "reset";
 interface ButtonProps {
     type: ButtonType;
     text: string;
@@ -19,7 +20,7 @@ export const Button = ({
         <button
             onClick={onClick}
             type={type}
-            className={className}
+            className={`${styles.button} ${className}`}
             disabled={disabled}
         >
             {text}

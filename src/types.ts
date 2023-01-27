@@ -12,3 +12,9 @@ export interface Comment {
     rating: Rating;
     comment: string;
 }
+
+export interface BasicAtomicClass {
+    wrapperClass?: string;
+    subjectClass?: string;
+    errorClass?: string;
+}

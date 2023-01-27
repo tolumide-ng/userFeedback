@@ -1,26 +1,42 @@
 import * as React from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "../../atoms/Button";
+import styles from "./index.module.css";
 
 export const Header = () => {
     const location = useLocation();
+    const [page, setPage] = React.useState("");
 
-    const pageTitles: Record<string, string> = {
-        home: "Feedback Form",
-        comments: "Feedback Results",
-    };
+    const pageTitles: Record<string, string> = React.useMemo(
+        () => ({
+            home: "Feedback Form",
+            comments: "Feedback Results",
+        }),
+        [],
+    );
 
-    let headerTitle = React.useRef(pageTitles["home"]);
-
-    // React.useEffect(() => {
-    //     const name: string = location.pathname.split("/")[1];
-    //     headerTitle.current = pageTitles[name];
-    // }, [location]);
+    React.useEffect(() => {
+        const name: string = location.pathname.split("/")[1];
+        if (!name) {
+            setPage("home");
+        } else {
+            setPage(name);
+        }
+    }, [location, pageTitles]);
 
     return (
-        <header>
-            <h1>{headerTitle.current}</h1>
-            {/* <Button text="" /> */}
-        </header>
+        <div className={styles.header}>
+            <h1 className={styles.headerTitle}>{pageTitles[page]}</h1>
+
+            {page === "comments" ? (
+                <Link to="/">
+                    <Button
+                        type="button"
+                        text="Go back"
+                        className={styles.headerButton}
+                    />
+                </Link>
+            ) : null}
+        </div>
     );
 };

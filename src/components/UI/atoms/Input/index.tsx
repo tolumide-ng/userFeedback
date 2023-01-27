@@ -1,3 +1,5 @@
+import { BasicAtomicClass } from "../../../../types";
+
 interface InputProps {
     name: string;
     required: boolean;
@@ -7,11 +9,7 @@ interface InputProps {
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     disabled?: boolean;
     error?: string;
-    classes?: {
-        wrapperClass?: string;
-        subjectClass?: string;
-        errorClass?: string;
-    };
+    classes?: BasicAtomicClass;
 }
 
 export const Input = ({

@@ -1,5 +1,12 @@
-*, 
-*::before, 
+:root {
+    --uc-border-radius: 0.25rem;
+
+    --uc-color-black: #000;
+    --uc-color-white: #fff;
+}
+
+*,
+*::before,
 *::after {
     box-sizing: border-box;
     margin: 0;

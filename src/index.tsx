@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomePage } from "./components/Pages/Home";
 import { ContextProvider } from "./components/store";
+import { PageWrapper } from "./components/UI/templates/PageWrapper";
 import "./index.css";
 
 const root = ReactDOM.createRoot(
@@ -10,8 +11,15 @@ const root = ReactDOM.createRoot(
 );
 
 const router = createBrowserRouter([
-    { path: "/", element: <HomePage /> },
-    { path: "/comments", element: <></> },
+    {
+        path: "/",
+        element: <PageWrapper />,
+        // errorElement: <></>,
+        children: [
+            { path: "", id: "home", element: <HomePage /> },
+            { path: "/comments", id: "comments", element: <>I am here now</> },
+        ],
+    },
 ]);
 
 root.render(

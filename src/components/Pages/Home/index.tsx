@@ -1,5 +1,5 @@
 import * as React from "react";
 
 export const HomePage = () => {
-    return <></>;
+    return <>say something about me</>;
 };
