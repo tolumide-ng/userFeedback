@@ -22,7 +22,7 @@ export const Header = () => {
         } else {
             setPage(name);
         }
-    }, [location, pageTitles]);
+    }, [location]);
 
     return (
         <div className={styles.header}>

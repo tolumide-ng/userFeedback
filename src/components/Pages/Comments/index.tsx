@@ -7,11 +7,9 @@ export const CommentsPage = () => {
         React.useContext(UserFeedbackContext);
 
     return (
-        <article>
-            <FeedbackResults
-                allFeedback={allFeedback}
-                ratingDistribution={ratingDistribution}
-            />
-        </article>
+        <FeedbackResults
+            allFeedback={allFeedback}
+            ratingDistribution={ratingDistribution}
+        />
     );
 };

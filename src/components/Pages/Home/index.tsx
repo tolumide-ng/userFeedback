@@ -5,13 +5,11 @@ export const HomePage = () => {
     const { onChange, data, onSubmit, ratingOptions } = useHome();
 
     return (
-        <article>
-            <FeedbackForm
-                onChange={onChange}
-                data={data}
-                onSubmit={onSubmit}
-                ratingOptions={ratingOptions}
-            />
-        </article>
+        <FeedbackForm
+            onChange={onChange}
+            data={data}
+            onSubmit={onSubmit}
+            ratingOptions={ratingOptions}
+        />
     );
 };
