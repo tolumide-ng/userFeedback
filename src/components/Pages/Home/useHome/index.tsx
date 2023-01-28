@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Feedback, FeedbackWithRating } from "../../../../types";
 import { UserFeedbackContext } from "../../../store/userFeedback";
 import { Validator } from "../../../../utils/validator";
-import { cleanData } from "../../../../utils/cleanData";
+import { adaptData } from "../../../../utils/adaptData";
 
 export const useHome = () => {
     const { addFeedback } = React.useContext(UserFeedbackContext);
@@ -67,7 +67,7 @@ export const useHome = () => {
             if (hasError) {
                 return;
             } else {
-                addFeedback(cleanData(data));
+                addFeedback(adaptData(data));
                 setData(initialState);
                 navigate("/comments");
             }

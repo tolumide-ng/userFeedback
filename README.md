@@ -18,7 +18,7 @@
 ## About the Project
 
 -   This project enables users to give feedback/reviews on a product/service
--   This project uses the [Atomic Design Methodology](https://atomicdesign.bradfrost.com/chapter-2/) to categorize its components
+-   This project uses the [Atomic Design Methodology](https://atomicdesign.bradfrost.com/chapter-2/) to structure the components
 -   Works well on mobile and desktop devices
 -   It is built with
     -   [React](https://reactjs.org/),
@@ -113,7 +113,7 @@ Visit `localhost:3000` on your favourite browser to view the application
 
 ## Some Choices Made:
 
-1. Used the atomic design pattern to ease the categorization of components and avoid the unnecessary nesting across the application
+1. Used the atomic design pattern to ease the categorization of components, avoid the unnecessary nesting across the application, promote component reusability, and ease of testing
 2. Testing hooks is debatable. However, the choice was made in this case as it handles most of the logic on the page
 
 ## What could have been done better:
@@ -124,5 +124,3 @@ Visit `localhost:3000` on your favourite browser to view the application
 ## Recording
 
 https://user-images.githubusercontent.com/35481645/215287685-f47973d2-59c7-4bff-b10f-da6fa4e7c322.mp4
-
-

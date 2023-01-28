@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import UserEvent from "@testing-library/user-event";
 import { Input } from ".";
 
 describe("Input", () => {
@@ -33,7 +33,7 @@ describe("Input", () => {
     it("should call onChange when a user types", async () => {
         const mockOnChange = jest.fn();
         const props = getProps({ onChange: mockOnChange });
-        const user = userEvent.setup();
+        const user = UserEvent.setup();
 
         render(<Input {...props} />);
 
@@ -45,7 +45,7 @@ describe("Input", () => {
     it("should not call onChange if disabled is true", async () => {
         const mockOnChange = jest.fn();
         const props = getProps({ onChange: mockOnChange, disabled: true });
-        const user = userEvent.setup();
+        const user = UserEvent.setup();
 
         render(<Input {...props} />);
 
