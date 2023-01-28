@@ -5,11 +5,11 @@ export class Validator {
         const trimmedValue = value.trim();
 
         if (name === "rating") {
-            return Validator.#isWithinRange(Number(value.trim()));
+            return Validator.#isWithinRange(Number(trimmedValue));
         }
 
         if (name === "email") {
-            return Validator.#validateEmail(trimmedValue);
+            return Validator.#isValidEmail(trimmedValue);
         }
 
         return Validator.#checkLength(name, trimmedValue);
@@ -23,7 +23,7 @@ export class Validator {
         }
     }
 
-    static #validateEmail(value: string) {
+    static #isValidEmail(value: string) {
         const email =
             /^\w+([.-]?\w+)+@\w+([.:]?\w+)+(\.[a-zA-Z0-9]{2,})+$/.test(value);
 

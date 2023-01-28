@@ -40,7 +40,7 @@ describe("Validator", () => {
         },
         {
             name: "rating",
-            value: "0",
+            value: "0   ",
             error: "Please select a rating between 1 and 5",
         },
         {

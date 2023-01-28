@@ -21,7 +21,7 @@ type CustomLabelProps = {
 
 export const CustomLabel = ({ axis }: CustomLabelProps) => {
     const dimensions = {
-        x: { angle: 270, x: 35, y: 150, title: "Count" },
+        x: { angle: 270, x: 35, y: 150, title: "Percentage" },
         y: { angle: 0, x: 200, y: 395, title: "Rating" },
     };
 

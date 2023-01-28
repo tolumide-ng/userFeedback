@@ -1,7 +1,7 @@
 import * as React from "react";
 import styles from "./index.module.css";
 
-interface TextAreaProps {
+type TextAreaProps = {
     name: string;
     placeholder?: string;
     value: string;
@@ -12,12 +12,7 @@ interface TextAreaProps {
     error?: string;
     disabled?: boolean;
     ariaLabel?: string;
-    classes?: {
-        wrapperClass?: string;
-        subjectClass?: string;
-        errorClass?: string;
-    };
-}
+};
 
 export const TextArea = ({
     name,
@@ -28,12 +23,11 @@ export const TextArea = ({
     onChange,
     error,
     disabled = false,
-    classes,
     label,
     ariaLabel,
 }: TextAreaProps) => {
     return (
-        <div className={`${styles.textAreaWrapper} ${classes?.wrapperClass}`}>
+        <div className={styles.textAreaWrapper}>
             <label className={styles.textAreaLabel} htmlFor={name}>
                 {label}
             </label>
@@ -43,7 +37,7 @@ export const TextArea = ({
                 cols={cols}
                 rows={rows}
                 onChange={onChange}
-                className={`${styles.textArea} ${classes?.subjectClass} ${
+                className={`${styles.textArea} ${
                     error ? styles.textAreaError : ""
                 }`}
                 placeholder={placeholder}
@@ -51,11 +45,7 @@ export const TextArea = ({
                 disabled={disabled}
                 aria-label={ariaLabel}
             />
-            {error ? (
-                <p className={`${styles.textAreaError} ${classes?.errorClass}`}>
-                    {error}
-                </p>
-            ) : null}
+            {error ? <p className={styles.textAreaError}>{error}</p> : null}
         </div>
     );
 };

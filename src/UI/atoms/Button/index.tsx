@@ -1,13 +1,13 @@
 import styles from "./index.module.css";
 
 export type ButtonType = "submit" | "button" | "reset";
-interface ButtonProps {
+type ButtonProps = {
     type: ButtonType;
     text: string;
     onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
     className?: string;
     disabled?: boolean;
-}
+};
 
 export const Button = ({
     text,

@@ -5,8 +5,6 @@
     --uc-color-white: #fff;
     --uc-color-red: #ff0000;
     --uc-color-gray: #808080;
-
-    --page-padding: 10rem;
 }
 
 *,
@@ -19,10 +17,4 @@
 
 * {
     font-family: Arial, Helvetica, sans-serif;
-}
-
-@media screen and (max-width: 850px) {
-    :root {
-        --page-padding: 4rem;
-    }
 }

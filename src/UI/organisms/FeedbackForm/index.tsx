@@ -6,7 +6,7 @@ import { SelectOption } from "../../atoms/Select";
 import { TextArea } from "../../atoms/TextArea";
 import styles from "./index.module.css";
 
-interface FeedbackFormProps {
+type FeedbackFormProps = {
     onChange: (
         e: React.ChangeEvent<
             HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -15,7 +15,7 @@ interface FeedbackFormProps {
     onSubmit: (e: React.FormEvent) => void;
     feedback: FeedbackInputWithRating;
     ratingOptions: Array<number>;
-}
+};
 
 export const FeedbackForm = ({
     onChange,

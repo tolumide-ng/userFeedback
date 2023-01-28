@@ -1,7 +1,7 @@
 import * as React from "react";
 import styles from "./index.module.css";
 
-interface SelectOptionProps {
+type SelectOptionProps = {
     onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
     options: Array<string | number>;
     name: string;
@@ -9,7 +9,7 @@ interface SelectOptionProps {
     error?: string;
     disabledOption: string | number | null;
     value: string | number;
-}
+};
 
 export const SelectOption = ({
     onChange,

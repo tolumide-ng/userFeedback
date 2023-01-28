@@ -3,10 +3,10 @@ import { Chart } from "../../molecules/Chart";
 import { Comment } from "../../molecules/Comment";
 import styles from "./index.module.css";
 
-interface FeedbackResultsProps {
+type FeedbackResultsProps = {
     allFeedback: Array<FeedbackWithId>;
     ratingDistribution: Array<Distribution>;
-}
+};
 
 export const FeedbackResults = ({
     allFeedback,

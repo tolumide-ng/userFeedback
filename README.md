@@ -16,5 +16,6 @@ B. View Feedback/Review:
 You can view the comments of a review, including the email of the author of such review.
 This page also allows you to see the distribution of the review ratings overtime.
 
-NB:
-<!-- At the moment, this project does not use any external data storage. Hence, all reviews would be lost once you refresh the page. -->
+### What more can be done?
+
+1. Creating a wrapper component (molecule) that can be used for validation

@@ -1,15 +1,13 @@
 import * as React from "react";
 import { Distribution, Feedback, FeedbackWithId } from "../../types";
-import { storage } from "../../utils/localStorage";
+import { Storage } from "../../utils/storage";
 
-interface UserFeedbackContextValue {
+type UserFeedbackContextValue = {
     allFeedback: Array<FeedbackWithId>;
     addFeedback: (feedback: Feedback) => void;
     ratingDistribution: Array<Distribution>;
     ratingOptions: Array<number>;
-}
-
-const HIGHEST_RATING = 5;
+};
 
 export const UserFeedbackContext =
     React.createContext<UserFeedbackContextValue>(
@@ -21,23 +19,23 @@ export const UserFeedbackProvider = ({ children }: React.PropsWithChildren) => {
         [],
     );
 
+    const ratingOptions = React.useMemo(() => [1, 2, 3, 4, 5], []);
+
     React.useEffect(() => {
-        setAllFeedback(storage.get());
+        setAllFeedback(Storage.reviews);
     }, []);
 
     const addFeedback = React.useCallback(
         (comment: Feedback) => {
             const state = [
-                { id: `${allFeedback.length}-${comment.author}`, ...comment },
+                { ...comment, id: `${allFeedback.length}-${comment.author}` },
                 ...allFeedback,
             ];
             setAllFeedback(state);
-            storage.update(state);
+            Storage.reviews = state;
         },
         [allFeedback],
     );
-
-    const ratingOptions = React.useMemo(() => [1, 2, 3, 4, 5], []);
 
     const ratingDistribution = React.useMemo(() => {
         const result: Record<number, number> = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
@@ -48,11 +46,9 @@ export const UserFeedbackProvider = ({ children }: React.PropsWithChildren) => {
 
         const distribution = Object.entries(result);
 
-        return distribution.map(([rating, v]) => ({
+        return distribution.map(([rating, count]) => ({
             name: rating,
-            percentage: v,
-            total: distribution.length * HIGHEST_RATING,
-            value: v,
+            percentage: (count / allFeedback.length) * 100,
         }));
     }, [allFeedback]);
 

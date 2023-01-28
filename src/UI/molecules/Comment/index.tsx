@@ -1,9 +1,9 @@
 import styles from "./index.module.css";
 
-interface CommentProps {
+type CommentProps = {
     email: string;
     comment: string;
-}
+};
 
 export const Comment = ({ email, comment }: CommentProps) => {
     return (

@@ -1,9 +1,9 @@
-export interface Feedback {
+export type Feedback = {
     author: string;
     email: string;
     rating: number;
     comment: string;
-}
+};
 
 export type FeedbackWithId = Feedback & { id: string };
 
@@ -16,6 +16,4 @@ export type BasicAtomicClass = {
 export type Distribution = {
     name: string;
     percentage: number;
-    value: number;
-    total: number;
 };

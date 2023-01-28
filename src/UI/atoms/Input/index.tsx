@@ -1,7 +1,7 @@
 import { BasicAtomicClass } from "../../../types";
 import styles from "./index.module.css";
 
-interface InputProps {
+type InputProps = {
     name: string;
     required?: boolean;
     placeholder?: string;
@@ -13,7 +13,7 @@ interface InputProps {
     classes?: BasicAtomicClass;
     label: string;
     ariaLabel?: string;
-}
+};
 
 export const Input = ({
     name,
