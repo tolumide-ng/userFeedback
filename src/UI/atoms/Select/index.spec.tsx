@@ -8,7 +8,7 @@ describe("SelectOption", () => {
         options: [1, 2, 3, 4],
         name: "select option",
         label: "label text",
-        disabledOption: null,
+        placeholder: null,
         value: 5,
     });
 

@@ -51,7 +51,7 @@ export const FeedbackForm = ({
                     onChange={onChange}
                     name="rating"
                     label="Rating"
-                    disabledOption={0}
+                    placeholder={"Choose a Rating"}
                     error={data.rating.error}
                     value={data.rating.value}
                 />

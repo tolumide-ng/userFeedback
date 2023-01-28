@@ -7,12 +7,6 @@ export type Feedback = {
 
 export type FeedbackWithId = Feedback & { id: string };
 
-export type BasicAtomicClass = {
-    wrapperClass?: string;
-    subjectClass?: string;
-    errorClass?: string;
-};
-
 export type Distribution = {
     name: string;
     percentage: number;

@@ -1,4 +1,3 @@
-import { BasicAtomicClass } from "../../../types";
 import styles from "./index.module.css";
 
 type InputProps = {
@@ -10,7 +9,6 @@ type InputProps = {
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     disabled?: boolean;
     error?: string;
-    classes?: BasicAtomicClass;
     label: string;
     ariaLabel?: string;
 };
@@ -21,7 +19,6 @@ export const Input = ({
     type,
     value,
     onChange,
-    classes,
     error,
     disabled = false,
     required = false,
@@ -29,7 +26,7 @@ export const Input = ({
     ariaLabel,
 }: InputProps) => {
     return (
-        <div className={`${styles.inputWrapper} ${classes?.wrapperClass}`}>
+        <div className={styles.inputWrapper}>
             <label className={styles.inputLabel} htmlFor={name}>
                 {label}
             </label>
@@ -42,16 +39,12 @@ export const Input = ({
                 required={required}
                 onChange={onChange}
                 aria-label={ariaLabel}
-                className={`${styles.input} ${classes?.subjectClass} ${
+                className={`${styles.input} ${
                     error ? styles.inputErrorInput : ""
                 }`}
                 disabled={disabled}
             />
-            {error ? (
-                <p className={`${styles.inputError} ${classes?.errorClass}`}>
-                    {error}
-                </p>
-            ) : null}
+            {error ? <p className={styles.inputError}>{error}</p> : null}
         </div>
     );
 };

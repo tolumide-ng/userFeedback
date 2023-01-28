@@ -7,7 +7,7 @@ type SelectOptionProps = {
     name: string;
     label: string;
     error?: string;
-    disabledOption: string | number | null;
+    placeholder: string | number | null;
     value: string | number;
 };
 
@@ -17,7 +17,7 @@ export const SelectOption = ({
     name,
     label,
     error,
-    disabledOption,
+    placeholder,
 }: SelectOptionProps) => {
     return (
         <div className={styles.selectWrapper}>
@@ -32,8 +32,8 @@ export const SelectOption = ({
                 onChange={onChange}
                 name={name}
             >
-                {disabledOption !== null ? (
-                    <option value={disabledOption}>{disabledOption}</option>
+                {placeholder !== null ? (
+                    <option value={placeholder}>{placeholder}</option>
                 ) : null}
 
                 {options.map((value) => (

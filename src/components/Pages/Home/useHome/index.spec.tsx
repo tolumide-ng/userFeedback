@@ -74,7 +74,7 @@ describe("useHome", () => {
         expect(result.current.ratingOptions).toMatchObject([1, 2, 3, 4, 5]);
     });
 
-    it("should call add the feedback to store and navigate when submit is called an all input are valid", async () => {
+    it("should add the feedback to store and navigate when submit is called and there are no errors", async () => {
         const validateSpy = jest
             .spyOn(Validator, "validate")
             .mockReturnValue(null);
