@@ -19,11 +19,11 @@ type FeedbackExceptRating = Record<
     UserInput
 >;
 
-type RatingFeedback = Record<"rating", UserRating>;
+type FeedbackRating = Record<"rating", UserRating>;
 
-export type FeedbackInputWithRating = FeedbackExceptRating & RatingFeedback;
+export type FeedbackWithRating = FeedbackExceptRating & FeedbackRating;
 
-function getFeedback(feedback: FeedbackInputWithRating): Feedback {
+function getFeedback(feedback: FeedbackWithRating): Feedback {
     const feedbackArr = Object.entries(feedback).map(([key, obj]) => [
         key,
         obj.value,
@@ -49,7 +49,7 @@ export const useHome = () => {
     const navigate = useNavigate();
 
     const [feedback, setFeedback] =
-        React.useState<FeedbackInputWithRating>(initialState);
+        React.useState<FeedbackWithRating>(initialState);
 
     const onChange = React.useCallback(
         (

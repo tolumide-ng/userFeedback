@@ -1,4 +1,4 @@
-import { FeedbackWithId } from "../types";
+import { FeedbackWithId } from "../../types";
 
 const STORAGE_KEY = "allFeedback";
 
