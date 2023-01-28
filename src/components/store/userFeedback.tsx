@@ -2,7 +2,7 @@ import * as React from "react";
 import { Distribution, Feedback, FeedbackWithId } from "../../types";
 import { Storage } from "../../utils/storage";
 
-type UserFeedbackContextValue = {
+export type UserFeedbackContextValue = {
     allFeedback: Array<FeedbackWithId>;
     addFeedback: (feedback: Feedback) => void;
     ratingDistribution: Array<Distribution>;

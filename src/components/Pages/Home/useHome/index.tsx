@@ -1,9 +1,9 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
-import { Feedback, FeedbackWithRating } from "../../../types";
-import { UserFeedbackContext } from "../../store/userFeedback";
-import { Validator } from "../../../utils/validator";
-import { cleanData } from "../../../utils/cleanData";
+import { Feedback, FeedbackWithRating } from "../../../../types";
+import { UserFeedbackContext } from "../../../store/userFeedback";
+import { Validator } from "../../../../utils/validator";
+import { cleanData } from "../../../../utils/cleanData";
 
 export const useHome = () => {
     const { addFeedback } = React.useContext(UserFeedbackContext);
