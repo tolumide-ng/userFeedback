@@ -21,12 +21,12 @@ describe("Validator", () => {
         {
             name: "email",
             value: "",
-            error: "Please provide a valid email address",
+            error: "please provide a valid email address",
         },
         {
             name: "email",
             value: "in`898320-3",
-            error: "Please provide a valid email address",
+            error: "please provide a valid email address",
         },
         {
             name: "email",
@@ -41,12 +41,12 @@ describe("Validator", () => {
         {
             name: "rating",
             value: "0   ",
-            error: "Please select a rating between 1 and 5",
+            error: "please select a rating between 1 and 5",
         },
         {
             name: "rating",
             value: "6",
-            error: "Please select a rating between 1 and 5",
+            error: "please select a rating between 1 and 5",
         },
     ])("validate the value", ({ name, value, error }) => {
         expect(Validator.validate(name as keyof Feedback, value)).toBe(error);

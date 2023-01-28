@@ -19,7 +19,7 @@ export class Validator {
         if (value > 0 && value <= 5) {
             return null;
         } else {
-            return "Please select a rating between 1 and 5";
+            return "please select a rating between 1 and 5";
         }
     }
 
@@ -28,7 +28,7 @@ export class Validator {
             /^\w+([.-]?\w+)+@\w+([.:]?\w+)+(\.[a-zA-Z0-9]{2,})+$/.test(value);
 
         if (!email) {
-            return "Please provide a valid email address";
+            return "please provide a valid email address";
         }
 
         return null;
