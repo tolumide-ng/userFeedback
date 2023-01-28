@@ -17,3 +17,22 @@ export type Distribution = {
     name: string;
     percentage: number;
 };
+
+type UserInput = {
+    value: string;
+    error: string;
+};
+
+type UserRating = {
+    value: number;
+    error: string;
+};
+
+type FeedbackExceptRating = Record<
+    Exclude<keyof Feedback, "rating">,
+    UserInput
+>;
+
+type FeedbackRating = Record<"rating", UserRating>;
+
+export type FeedbackWithRating = FeedbackExceptRating & FeedbackRating;

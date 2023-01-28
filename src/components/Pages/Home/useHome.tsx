@@ -1,40 +1,12 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
-import { Feedback } from "../../../types";
+import { Feedback, FeedbackWithRating } from "../../../types";
 import { UserFeedbackContext } from "../../store/userFeedback";
 import { Validator } from "../../../utils/validator";
-
-type UserInput = {
-    value: string;
-    error: string;
-};
-
-type UserRating = {
-    value: number;
-    error: string;
-};
-
-type FeedbackExceptRating = Record<
-    Exclude<keyof Feedback, "rating">,
-    UserInput
->;
-
-type FeedbackRating = Record<"rating", UserRating>;
-
-export type FeedbackWithRating = FeedbackExceptRating & FeedbackRating;
-
-function getFeedback(feedback: FeedbackWithRating): Feedback {
-    const feedbackArr = Object.entries(feedback).map(([key, obj]) => [
-        key,
-        obj.value,
-    ]);
-
-    return Object.fromEntries(feedbackArr);
-}
+import { cleanData } from "../../../utils/cleanData";
 
 export const useHome = () => {
-    const { addFeedback, ratingOptions } =
-        React.useContext(UserFeedbackContext);
+    const { addFeedback } = React.useContext(UserFeedbackContext);
 
     const initialState = React.useMemo(
         () => ({
@@ -48,8 +20,9 @@ export const useHome = () => {
 
     const navigate = useNavigate();
 
-    const [feedback, setFeedback] =
-        React.useState<FeedbackWithRating>(initialState);
+    const [data, setData] = React.useState<FeedbackWithRating>(initialState);
+
+    const ratingOptions = React.useMemo(() => [1, 2, 3, 4, 5], []);
 
     const onChange = React.useCallback(
         (
@@ -61,7 +34,7 @@ export const useHome = () => {
             const error =
                 Validator.validate(name as keyof Feedback, value) ?? "";
 
-            setFeedback((state) => ({
+            setData((state) => ({
                 ...state,
                 [name]: { value, error },
             }));
@@ -73,21 +46,19 @@ export const useHome = () => {
         (e: React.FormEvent) => {
             e.preventDefault();
 
-            const keys = Object.keys(feedback) as Array<keyof Feedback>;
+            const keys = Object.keys(data) as Array<keyof Feedback>;
 
             let hasError = false;
 
             keys.forEach((name) => {
                 const error = Validator.validate(
                     name,
-                    String(feedback[name].value),
+                    String(data[name].value),
                 );
 
-                if (error) {
-                    hasError = true;
-                }
+                if (error) hasError = true;
 
-                setFeedback((state) => ({
+                setData((state) => ({
                     ...state,
                     [name]: { ...state[name], error },
                 }));
@@ -96,18 +67,18 @@ export const useHome = () => {
             if (hasError) {
                 return;
             } else {
-                addFeedback(getFeedback(feedback));
-                setFeedback(initialState);
+                addFeedback(cleanData(data));
+                setData(initialState);
                 navigate("/comments");
             }
         },
 
-        [addFeedback, feedback, navigate, initialState],
+        [addFeedback, data, navigate, initialState],
     );
 
     return {
         onChange,
-        feedback,
+        data,
         onSubmit,
         ratingOptions,
     };

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { FeedbackWithRating } from "../../../components/Pages/Home/useHome";
+import { FeedbackWithRating } from "../../../types";
 import { Button } from "../../atoms/Button";
 import { Input } from "../../atoms/Input";
 import { SelectOption } from "../../atoms/Select";
@@ -13,14 +13,14 @@ type FeedbackFormProps = {
         >,
     ) => void;
     onSubmit: (e: React.FormEvent) => void;
-    feedback: FeedbackWithRating;
+    data: FeedbackWithRating;
     ratingOptions: Array<number>;
 };
 
 export const FeedbackForm = ({
     onChange,
     onSubmit,
-    feedback,
+    data,
     ratingOptions,
 }: FeedbackFormProps) => {
     return (
@@ -29,9 +29,9 @@ export const FeedbackForm = ({
                 <Input
                     name="author"
                     type="text"
-                    value={feedback.author.value}
+                    value={data.author.value}
                     onChange={onChange}
-                    error={feedback.author.error}
+                    error={data.author.error}
                     label="Author"
                     ariaLabel="author"
                 />
@@ -39,9 +39,9 @@ export const FeedbackForm = ({
                 <Input
                     name="email"
                     type="email"
-                    value={feedback.email.value}
+                    value={data.email.value}
                     onChange={onChange}
-                    error={feedback.email.error}
+                    error={data.email.error}
                     label="Email"
                     ariaLabel="email"
                 />
@@ -52,15 +52,15 @@ export const FeedbackForm = ({
                     name="rating"
                     label="Rating"
                     disabledOption={0}
-                    error={feedback.rating.error}
-                    value={feedback.rating.value}
+                    error={data.rating.error}
+                    value={data.rating.value}
                 />
             </div>
             <div className={styles.feedbackRight}>
                 <TextArea
                     name="comment"
-                    value={feedback.comment.value}
-                    error={feedback.comment.error}
+                    value={data.comment.value}
+                    error={data.comment.error}
                     onChange={onChange}
                     label="Comment"
                     ariaLabel="comment"

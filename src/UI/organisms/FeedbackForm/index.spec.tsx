@@ -11,13 +11,13 @@ describe("FeedbackForm", () => {
     };
 
     const getProps = ({
-        feedback = values,
+        data = values,
         onSubmit = jest.fn(),
         onChange = jest.fn(),
     }) => ({
         onChange,
         onSubmit,
-        feedback,
+        data,
         ratingOptions: [1, 2, 3, 4],
     });
 
@@ -52,7 +52,7 @@ describe("FeedbackForm", () => {
         modifiedValues.email.error = emailError;
         modifiedValues.author.error = nameError;
 
-        const props = getProps({ feedback: modifiedValues });
+        const props = getProps({ data: modifiedValues });
 
         render(<FeedbackForm {...props} />);
 

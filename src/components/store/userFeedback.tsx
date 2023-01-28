@@ -6,7 +6,6 @@ type UserFeedbackContextValue = {
     allFeedback: Array<FeedbackWithId>;
     addFeedback: (feedback: Feedback) => void;
     ratingDistribution: Array<Distribution>;
-    ratingOptions: Array<number>;
 };
 
 export const UserFeedbackContext =
@@ -18,8 +17,6 @@ export const UserFeedbackProvider = ({ children }: React.PropsWithChildren) => {
     const [allFeedback, setAllFeedback] = React.useState<Array<FeedbackWithId>>(
         [],
     );
-
-    const ratingOptions = React.useMemo(() => [1, 2, 3, 4, 5], []);
 
     React.useEffect(() => {
         setAllFeedback(Storage.reviews);
@@ -57,9 +54,8 @@ export const UserFeedbackProvider = ({ children }: React.PropsWithChildren) => {
             allFeedback,
             addFeedback,
             ratingDistribution,
-            ratingOptions,
         }),
-        [allFeedback, addFeedback, ratingDistribution, ratingOptions],
+        [allFeedback, addFeedback, ratingDistribution],
     );
 
     return (
