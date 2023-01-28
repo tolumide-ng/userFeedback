@@ -123,4 +123,6 @@ Visit `localhost:3000` on your favourite browser to view the application
 
 ## Recording
 
-![Video showing how to use the application on an iphone 12 Pro](./public/appRecording.mov)
+https://user-images.githubusercontent.com/35481645/215287685-f47973d2-59c7-4bff-b10f-da6fa4e7c322.mp4
+
+
