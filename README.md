@@ -13,7 +13,7 @@
 -   [Having problem running the application](#having-problem-running-the-app)
 -   [Some Choices made](#some-choices-made)
 -   [What could have been done better](#what-could-have-been-done-better)
--   [Screenshots](#screenshots)
+-   [Recording](#recording)
 
 ## About the Project
 
@@ -121,7 +121,6 @@ Visit `localhost:3000` on your favourite browser to view the application
 1. Creating a simple wrapper component for the interactive components(Input, TextArea e.t.c), this wrapper component would then handle the label, and errors, hence reducing code duplication. However, that would be a "too early abstraction" in this case
 2. Displaying the author's name rather than the email to promote privacy
 
-## Screenshots
+## Recording
 
-![Home Page on iphone 12 Pro](./public/mobileHomePage.png)
-![Comments Page on pixel 5](./public/mobileCommentsPage.png)
+![Video showing how to use the application on an iphone 12 Pro](./public/appRecording.mov)
