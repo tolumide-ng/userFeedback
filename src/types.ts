@@ -8,7 +8,7 @@ export type Feedback = {
 export type FeedbackWithId = Feedback & { id: string };
 
 export type Distribution = {
-    name: string;
+    rating: string;
     percentage: number;
 };
 
@@ -22,11 +22,12 @@ type UserRating = {
     error: string;
 };
 
-type FeedbackExceptRating = Record<
+type FeedbackWithErrorsExceptRating = Record<
     Exclude<keyof Feedback, "rating">,
     UserInput
 >;
 
-type FeedbackRating = Record<"rating", UserRating>;
+type RatingWithError = Record<"rating", UserRating>;
 
-export type FeedbackWithRating = FeedbackExceptRating & FeedbackRating;
+export type FeedbackWithErrors = FeedbackWithErrorsExceptRating &
+    RatingWithError;

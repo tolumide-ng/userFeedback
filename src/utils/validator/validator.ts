@@ -24,10 +24,10 @@ export class Validator {
     }
 
     static #isValidEmail(value: string) {
-        const email =
+        const isEmailValid =
             /^\w+([.-]?\w+)+@\w+([.:]?\w+)+(\.[a-zA-Z0-9]{2,})+$/.test(value);
 
-        if (!email) {
+        if (!isEmailValid) {
             return "please provide a valid email address";
         }
 

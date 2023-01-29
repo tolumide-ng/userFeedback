@@ -1,5 +1,5 @@
 import * as React from "react";
-import { FeedbackWithRating } from "../../../types";
+import { FeedbackWithErrors } from "../../../types";
 import { Button } from "../../atoms/Button/Button";
 import { Input } from "../../atoms/Input/Input";
 import { SelectOption } from "../../atoms/Select/Select";
@@ -13,7 +13,7 @@ type FeedbackFormProps = {
         >,
     ) => void;
     onSubmit: (e: React.FormEvent) => void;
-    data: FeedbackWithRating;
+    data: FeedbackWithErrors;
     ratingOptions: Array<number>;
 };
 

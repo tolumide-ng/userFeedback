@@ -44,7 +44,7 @@ export const UserFeedbackProvider = ({ children }: React.PropsWithChildren) => {
         const distribution = Object.entries(result);
 
         return distribution.map(([rating, count]) => ({
-            name: rating,
+            rating,
             percentage: (count / allFeedback.length) * 100,
         }));
     }, [allFeedback]);

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
-import { Feedback, FeedbackWithRating } from "../../../../types";
+import { Feedback, FeedbackWithErrors } from "../../../../types";
 import { UserFeedbackContext } from "../../../store/userFeedback";
 import { Validator } from "../../../../utils/validator/validator";
 import { adaptData } from "../../../../utils/adaptData/adaptData";
@@ -20,7 +20,7 @@ export const useHome = () => {
 
     const navigate = useNavigate();
 
-    const [data, setData] = React.useState<FeedbackWithRating>(initialState);
+    const [data, setData] = React.useState<FeedbackWithErrors>(initialState);
 
     const ratingOptions = React.useMemo(() => [1, 2, 3, 4, 5], []);
 
@@ -66,11 +66,11 @@ export const useHome = () => {
 
             if (hasError) {
                 return;
-            } else {
-                addFeedback(adaptData(data));
-                setData(initialState);
-                navigate("/comments");
             }
+
+            addFeedback(adaptData(data));
+            setData(initialState);
+            navigate("/comments");
         },
 
         [addFeedback, data, navigate, initialState],

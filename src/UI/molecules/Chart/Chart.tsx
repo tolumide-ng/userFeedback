@@ -39,7 +39,7 @@ export const Chart = ({ data }: ChartProps) => {
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={data} barSize={20} className={styles.chart}>
                     <XAxis
-                        dataKey="name"
+                        dataKey="rating"
                         padding={{ left: 10, right: 10 }}
                         label={<CustomLabel axis="x" />}
                     />
