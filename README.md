@@ -6,10 +6,14 @@
 -   [Running this application locally and testing](#running-this-application-locally-and-testing)
     -   [Using Docker Compose](#using-docker-compose)
         -   [Prerequisites](#prerequisites)
-        -   [How to](#how-to)
+        -   [Run the Application's Unit tests](#using-docker-compose-run-the-applications-unit-tests)
+        -   [Start the Application locally](#using-docker-compose-start-the-application-locally)
+        -   [Shutdown the Application](#using-docker-compose-shutting-down-the-application)
     -   [Using npm](#using-npm)
         -   [Prerequisites](#prerequisites-1)
-        -   [How to](#how-to-1)
+        -   [Run the Application's Unit tests](#using-npm-run-the-applications-unit-tests)
+        -   [Start the Application locally](#using-npm-start-the-application-locally)
+        -   [Shutdown the Application](#using-npm-shutdown-the-application)
 -   [Having problem running the application](#having-problem-running-the-app)
 -   [Some Choices made](#some-choices-made)
 -   [What could have been done better](#what-could-have-been-done-better)
@@ -53,9 +57,10 @@ NB: You need to start the application locally to access the following routes
 
 ## Running this application locally and testing
 
-1. Clone this repository
-2. Cd into the cloned repository
-3. There are two ways you can start or test this application locally:
+1. Open your workspace terminal
+2. Clone this repository
+3. Cd into the cloned repository
+4. There are two ways you can start or test this application locally:
 
 ### Using Docker Compose:
 
@@ -64,7 +69,7 @@ NB: You need to start the application locally to access the following routes
 1.  [Docker](https://docs.docker.com/get-docker/)
 2.  [Docker Compose](https://docs.docker.com/compose/install/)
 
-#### How to:
+#### Using Docker Compose: Run the Application's Unit tests
 
 1. To run the tests with docker-compose, simply run:
 
@@ -72,10 +77,21 @@ NB: You need to start the application locally to access the following routes
 docker-compose up test
 ```
 
-2. To start the application with docker-compose, simply run:
+#### Using Docker Compose: Start the Application locally
+
+1. To start the application with docker-compose, simply run:
 
 ```
 docker-compose up web
+```
+
+### Using Docker Compose: Shutting down the Application
+
+1. Press `Cmd + C` on a MacOS or `Ctrl+ C` on Ubuntu to stop the application
+2. Run:
+
+```
+docker-compose down
 ```
 
 ### Using npm:
@@ -85,7 +101,7 @@ docker-compose up web
 1. [Node](https://nodejs.org/en/) at least v14.18.1
 2. [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
-#### How to:
+#### Using npm: Run the Application's Unit tests
 
 1. Install the dependencies with:
 
@@ -99,13 +115,25 @@ npm install
 npm test
 ```
 
-3. Start the application with:
+##### Using npm: Start the Application locally
+
+1. Install the dependencies with:
+
+```
+npm install
+```
+
+2. Start the application with:
 
 ```
 npm start
 ```
 
 Visit `localhost:3000` on your favourite browser to view the application
+
+#### Using npm: Shutdown the Application
+
+1. Press `Cmd + C` on MacOs or `Ctrl + C` on Ubuntu to stop the application
 
 ## Having problem running the app:
 
