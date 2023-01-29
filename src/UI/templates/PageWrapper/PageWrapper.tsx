@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import { Header } from "../../organisms/Header";
-import styles from "./index.module.css";
+import { Header } from "../../organisms/Header/Header";
+import styles from "./PageWrapper.module.css";
 
 export const PageWrapper = () => {
     return (

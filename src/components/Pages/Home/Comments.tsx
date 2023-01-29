@@ -1,5 +1,5 @@
-import { FeedbackForm } from "../../../UI/organisms/FeedbackForm";
-import { useHome } from "./useHome";
+import { FeedbackForm } from "../../../UI/organisms/FeedbackForm/FeedbackForm";
+import { useHome } from "./useHome/useHome";
 
 export const HomePage = () => {
     const { onChange, data, onSubmit, ratingOptions } = useHome();

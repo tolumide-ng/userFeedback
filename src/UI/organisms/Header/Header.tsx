@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "../../atoms/Button";
-import styles from "./index.module.css";
+import { Button } from "../../atoms/Button/Button";
+import styles from "./Header.module.css";
 
 export const Header = () => {
     const location = useLocation();

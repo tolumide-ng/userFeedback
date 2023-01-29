@@ -1,4 +1,4 @@
-import { Validator } from ".";
+import { Validator } from "./validator";
 import { Feedback } from "../../types";
 
 describe("Validator", () => {

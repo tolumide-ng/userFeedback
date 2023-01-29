@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import { FeedbackResults } from ".";
+import { FeedbackResults } from "./FeedbackResults";
 import { FeedbackWithId } from "../../../types";
 
-jest.mock("../../molecules/Chart", () => ({
+jest.mock("../../molecules/Chart/Chart.tsx", () => ({
     Chart: () => {
         return <></>;
     },

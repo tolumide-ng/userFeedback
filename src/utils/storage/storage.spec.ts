@@ -1,4 +1,4 @@
-import { Storage } from ".";
+import { Storage } from "./storage";
 
 describe("Storage", () => {
     it("should return reviews if there is one", () => {

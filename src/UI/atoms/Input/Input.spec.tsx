@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import UserEvent from "@testing-library/user-event";
-import { Input } from ".";
+import { Input } from "./Input";
 
 describe("Input", () => {
     const getProps = ({

@@ -1,4 +1,4 @@
-import styles from "./index.module.css";
+import styles from "./Button.module.css";
 
 export type ButtonType = "submit" | "button" | "reset";
 type ButtonProps = {

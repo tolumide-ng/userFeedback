@@ -1,10 +1,10 @@
 import * as React from "react";
 import { FeedbackWithRating } from "../../../types";
-import { Button } from "../../atoms/Button";
-import { Input } from "../../atoms/Input";
-import { SelectOption } from "../../atoms/Select";
-import { TextArea } from "../../atoms/TextArea";
-import styles from "./index.module.css";
+import { Button } from "../../atoms/Button/Button";
+import { Input } from "../../atoms/Input/Input";
+import { SelectOption } from "../../atoms/Select/Select";
+import { TextArea } from "../../atoms/TextArea/TextArea";
+import styles from "./FeedbackForm.module.css";
 
 type FeedbackFormProps = {
     onChange: (

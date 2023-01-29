@@ -2,8 +2,8 @@ import * as React from "react";
 import { useNavigate } from "react-router-dom";
 import { Feedback, FeedbackWithRating } from "../../../../types";
 import { UserFeedbackContext } from "../../../store/userFeedback";
-import { Validator } from "../../../../utils/validator";
-import { adaptData } from "../../../../utils/adaptData";
+import { Validator } from "../../../../utils/validator/validator";
+import { adaptData } from "../../../../utils/adaptData/adaptData";
 
 export const useHome = () => {
     const { addFeedback } = React.useContext(UserFeedbackContext);

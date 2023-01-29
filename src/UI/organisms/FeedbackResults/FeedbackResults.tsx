@@ -1,7 +1,7 @@
 import { Distribution, FeedbackWithId } from "../../../types";
-import { Chart } from "../../molecules/Chart";
-import { Comment } from "../../molecules/Comment";
-import styles from "./index.module.css";
+import { Chart } from "../../molecules/Chart/Chart";
+import { Comment } from "../../molecules/Comment/Comment";
+import styles from "./FeedbackResults.module.css";
 
 type FeedbackResultsProps = {
     allFeedback: Array<FeedbackWithId>;

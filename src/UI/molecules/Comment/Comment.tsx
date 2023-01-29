@@ -1,4 +1,4 @@
-import styles from "./index.module.css";
+import styles from "./Comment.module.css";
 
 type CommentProps = {
     email: string;

@@ -1,4 +1,3 @@
-import * as React from "react";
 import {
     Bar,
     BarChart,
@@ -9,7 +8,7 @@ import {
     YAxis,
 } from "recharts";
 import { Distribution } from "../../../types";
-import styles from "./index.module.css";
+import styles from "./Chart.module.css";
 
 type ChartProps = {
     data: Array<Distribution>;

@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import UserEvent from "@testing-library/user-event";
-import { SelectOption } from ".";
+import { SelectOption } from "./Select";
 
 describe("SelectOption", () => {
     const getProps = ({ onChange = jest.fn() }) => ({

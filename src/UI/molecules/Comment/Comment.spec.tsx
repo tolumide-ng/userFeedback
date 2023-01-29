@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { Comment } from ".";
+import { Comment } from "./Comment";
 
 describe("Comment", () => {
     it("should render the component", () => {

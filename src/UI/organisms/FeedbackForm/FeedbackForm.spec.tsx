@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import UserEvent from "@testing-library/user-event";
-import { FeedbackForm } from ".";
+import { FeedbackForm } from "./FeedbackForm";
 
 describe("FeedbackForm", () => {
     const values = {

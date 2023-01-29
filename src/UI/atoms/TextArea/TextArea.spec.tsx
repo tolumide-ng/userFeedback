@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import UserEvent from "@testing-library/user-event";
-import { TextArea } from ".";
+import { TextArea } from "./TextArea";
 
 describe("TextArea", () => {
     const getProps = ({

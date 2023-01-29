@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import { PageWrapper } from ".";
+import { PageWrapper } from "./PageWrapper";
 
 describe("PageWrapper", () => {
     it("should render the component", () => {

@@ -1,6 +1,6 @@
 import { act, renderHook } from "@testing-library/react";
-import { useHome } from ".";
-import { Validator } from "../../../../utils/validator";
+import { useHome } from "./useHome";
+import { Validator } from "../../../../utils/validator/validator";
 import { MemoryRouter } from "react-router-dom";
 import {
     UserFeedbackContext,

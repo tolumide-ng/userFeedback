@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Distribution, Feedback, FeedbackWithId } from "../../types";
-import { Storage } from "../../utils/storage";
+import { Storage } from "../../utils/storage/storage";
 
 export type UserFeedbackContextValue = {
     allFeedback: Array<FeedbackWithId>;

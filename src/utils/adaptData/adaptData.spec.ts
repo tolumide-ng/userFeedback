@@ -1,4 +1,4 @@
-import { adaptData } from ".";
+import { adaptData } from "./adaptData";
 import { Feedback } from "../../types";
 
 describe("adaptData", () => {

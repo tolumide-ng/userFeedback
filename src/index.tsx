@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { CommentsPage } from "./components/Pages/Comments";
-import { HomePage } from "./components/Pages/Home";
+import { CommentsPage } from "./components/Pages/Comments/Comments";
+import { HomePage } from "./components/Pages/Home/Comments";
 import { ContextProvider } from "./components/store";
-import { PageWrapper } from "./UI/templates/PageWrapper";
+import { PageWrapper } from "./UI/templates/PageWrapper/PageWrapper";
 import "./index.css";
 
 const root = ReactDOM.createRoot(
