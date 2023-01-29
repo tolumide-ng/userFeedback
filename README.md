@@ -72,27 +72,45 @@ NB: You need to start the application locally to access the following routes
 
 #### Using Docker Compose: Run the Application's Unit tests
 
-1. To run the tests with docker-compose, simply run:
+1. To run the tests with docker-compose, simply run: (on MacOS)
 
 ```
 docker-compose up test
 ```
 
+1. To run the tests with docker-compose, simply run: (on Ubuntu)
+
+```
+sudo docker-compose up test
+```
+
 #### Using Docker Compose: Start the Application locally
 
-1. To start the application with docker-compose, simply run:
+1. To start the application with docker-compose, simply run (on MacOS):
 
 ```
 docker-compose up web
 ```
 
+1. To start the application with docker-compose, simply run (on Ubuntu):
+
+```
+sudo docker-compose up web
+```
+
 ### Using Docker Compose: Shutting down the Application
 
 1. Press `Cmd + C` on a MacOS or `Ctrl+ C` on Ubuntu to stop the application
-2. Run:
+2. Run (on MacOS):
 
 ```
 docker-compose down
+```
+
+2. Run (on Ubuntu):
+
+```
+sudo docker-compose down
 ```
 
 ### Using npm:
@@ -139,6 +157,16 @@ Visit `localhost:3000` on your favourite browser to view the application
 ## Having problem running the app:
 
 1. Be sure to confirm that you do not have another project running on port 3000
+2. Seeing an Error like this error when trying to install depdencies on Ubuntu?
+
+```
+Error: EACCES: Permission denied, mkdir '/<file_path>
+```
+
+Solution:
+
+-   Run `rm -rf node_modules` in the repository and then `npm install` again
+    Why did that happen?: Well, it's possible that you had ran `docker-compose web` earlier
 
 ## Some Choices Made:
 
