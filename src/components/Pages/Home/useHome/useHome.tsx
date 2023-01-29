@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
-import { Feedback, FeedbackWithErrors } from "../../../../types";
+import { ChangeElement, Feedback, FeedbackWithErrors } from "../../../../types";
 import { UserFeedbackContext } from "../../../store/userFeedback";
 import { Validator } from "../../../../utils/validator/validator";
 import { adaptData } from "../../../../utils/adaptData/adaptData";
@@ -25,11 +25,7 @@ export const useHome = () => {
     const ratingOptions = React.useMemo(() => [1, 2, 3, 4, 5], []);
 
     const onChange = React.useCallback(
-        (
-            e: React.ChangeEvent<
-                HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-            >,
-        ) => {
+        (e: React.ChangeEvent<ChangeElement>) => {
             const { name, value } = e.target;
             const error =
                 Validator.validate(name as keyof Feedback, value) ?? "";

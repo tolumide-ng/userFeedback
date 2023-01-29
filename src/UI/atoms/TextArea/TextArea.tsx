@@ -11,7 +11,6 @@ type TextAreaProps = {
     onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
     error?: string;
     disabled?: boolean;
-    ariaLabel?: string;
 };
 
 export const TextArea = ({
@@ -24,7 +23,6 @@ export const TextArea = ({
     error,
     disabled = false,
     label,
-    ariaLabel,
 }: TextAreaProps) => {
     return (
         <div className={styles.textAreaWrapper}>
@@ -43,7 +41,7 @@ export const TextArea = ({
                 placeholder={placeholder}
                 value={value}
                 disabled={disabled}
-                aria-label={ariaLabel}
+                aria-label={name}
             />
             {error ? <p className={styles.textAreaError}>{error}</p> : null}
         </div>

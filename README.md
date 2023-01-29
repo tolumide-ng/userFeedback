@@ -36,6 +36,7 @@
 -   The application is properly tested(Unit tests) using
     -   [Jest](https://jestjs.io/), and
     -   [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+        You can find tests in the same folders as the components or modules. The tests usually are in the format of `*.spec.tsx`
 
 ## How does this application work
 
@@ -173,15 +174,16 @@ Solution:
 1. Used the atomic design pattern for many reasons including:
     - to ease the categorization/classification of components
     - avoid unnecessary nesting of components across the application
-    - promote component reusability
+    - promote component reusability, and a pattern for component breakdown
     - ease of testing
 2. Testing hooks is debatable. However, the choice was made in this case as `useHome` hook handles some important logic
 3. To improve the UX: Expectations for an input field are immediately validated, against the current input with feedback displayed once the user starts typing in an input field. This helps the user immediately understand what is required in a specific field
+4. Used labelled interactive elements over identification with placeholder to improve the accessibility
 
 ## What could have been done better:
 
 1. Creating a simple wrapper component for the interactive components(Input, TextArea e.t.c), this wrapper component would then handle the label, and errors, hence reducing code duplication. However, that would be a "too early abstraction" in this case
-2. Displaying the author's name rather than the email to promote privacy
+2. Displaying the author's name rather than the email to promote privacy but I assume there are reasons for the choice of displaying the email instead
 
 ## Recording
 

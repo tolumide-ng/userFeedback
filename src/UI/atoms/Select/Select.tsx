@@ -18,6 +18,7 @@ export const SelectOption = ({
     label,
     error,
     placeholder,
+    value,
 }: SelectOptionProps) => {
     return (
         <div className={styles.selectWrapper}>
@@ -31,6 +32,7 @@ export const SelectOption = ({
                 }`}
                 onChange={onChange}
                 name={name}
+                value={value}
             >
                 {placeholder !== null ? (
                     <option value={placeholder}>{placeholder}</option>

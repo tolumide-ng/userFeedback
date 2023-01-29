@@ -1,5 +1,5 @@
 import * as React from "react";
-import { FeedbackWithErrors } from "../../../types";
+import { ChangeElement, FeedbackWithErrors } from "../../../types";
 import { Button } from "../../atoms/Button/Button";
 import { Input } from "../../atoms/Input/Input";
 import { SelectOption } from "../../atoms/Select/Select";
@@ -7,11 +7,7 @@ import { TextArea } from "../../atoms/TextArea/TextArea";
 import styles from "./FeedbackForm.module.css";
 
 type FeedbackFormProps = {
-    onChange: (
-        e: React.ChangeEvent<
-            HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-        >,
-    ) => void;
+    onChange: (e: React.ChangeEvent<ChangeElement>) => void;
     onSubmit: (e: React.FormEvent) => void;
     data: FeedbackWithErrors;
     ratingOptions: Array<number>;
@@ -23,27 +19,26 @@ export const FeedbackForm = ({
     data,
     ratingOptions,
 }: FeedbackFormProps) => {
+    const { author, email, rating, comment } = data;
     return (
         <form onSubmit={onSubmit} className={styles.feedback}>
             <div className={styles.feedbackLeft}>
                 <Input
                     name="author"
                     type="text"
-                    value={data.author.value}
+                    value={author.value}
                     onChange={onChange}
-                    error={data.author.error}
+                    error={author.error}
                     label="Author"
-                    ariaLabel="author"
                 />
 
                 <Input
                     name="email"
                     type="email"
-                    value={data.email.value}
+                    value={email.value}
                     onChange={onChange}
-                    error={data.email.error}
+                    error={email.error}
                     label="Email"
-                    ariaLabel="email"
                 />
 
                 <SelectOption
@@ -52,18 +47,17 @@ export const FeedbackForm = ({
                     name="rating"
                     label="Rating"
                     placeholder={"Choose a Rating"}
-                    error={data.rating.error}
-                    value={data.rating.value}
+                    error={rating.error}
+                    value={rating.value}
                 />
             </div>
             <div className={styles.feedbackRight}>
                 <TextArea
                     name="comment"
-                    value={data.comment.value}
-                    error={data.comment.error}
+                    value={comment.value}
+                    error={comment.error}
                     onChange={onChange}
                     label="Comment"
-                    ariaLabel="comment"
                 />
 
                 <div className={styles.feedbackAction}>

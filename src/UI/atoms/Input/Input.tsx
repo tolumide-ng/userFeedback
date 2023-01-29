@@ -10,7 +10,6 @@ type InputProps = {
     disabled?: boolean;
     error?: string;
     label: string;
-    ariaLabel?: string;
 };
 
 export const Input = ({
@@ -23,7 +22,6 @@ export const Input = ({
     disabled = false,
     required = false,
     label,
-    ariaLabel,
 }: InputProps) => {
     return (
         <div className={styles.inputWrapper}>
@@ -38,7 +36,7 @@ export const Input = ({
                 placeholder={placeholder}
                 required={required}
                 onChange={onChange}
-                aria-label={ariaLabel}
+                aria-label={name}
                 className={`${styles.input} ${
                     error ? styles.inputErrorInput : ""
                 }`}

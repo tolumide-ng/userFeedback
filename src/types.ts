@@ -29,5 +29,10 @@ type FeedbackWithErrorsExceptRating = Record<
 
 type RatingWithError = Record<"rating", UserRating>;
 
+export type ChangeElement =
+    | HTMLInputElement
+    | HTMLTextAreaElement
+    | HTMLSelectElement;
+
 export type FeedbackWithErrors = FeedbackWithErrorsExceptRating &
     RatingWithError;

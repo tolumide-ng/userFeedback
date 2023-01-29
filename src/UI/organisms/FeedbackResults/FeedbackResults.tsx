@@ -14,7 +14,7 @@ export const FeedbackResults = ({
 }: FeedbackResultsProps) => {
     return (
         <article className={styles.result}>
-            <Chart data={ratingDistribution} />
+            {allFeedback?.length ? <Chart data={ratingDistribution} /> : null}
             <h2 className={styles.resultTitle}>Latest Comments</h2>
 
             <div className={styles.resultContent}>
