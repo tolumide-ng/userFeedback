@@ -23,24 +23,25 @@
 
 -   This project enables users to give feedback/reviews on a product/service
 -   This project uses the [Atomic Design Methodology](https://atomicdesign.bradfrost.com/chapter-2/) to structure the components
--   Works well on mobile and desktop devices
+-   Works well on mobile and desktop devices (Responsive Design)
 -   It is built with
     -   [React](https://reactjs.org/),
-    -   [Typescript](https://www.typescriptlang.org/),
+    -   [Typescript](https://www.typescriptlang.org/) a superScript of JavaScript that introduces strong typing,
     -   [React router](https://reactrouter.com/en/main/start/overview) for Route management,
     -   [Context API](https://beta.reactjs.org/learn/passing-data-deeply-with-context) for State management,
     -   [local Storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) for persistence,
     -   [Docker](https://www.docker.com/),
     -   [Rechart](https://recharts.org/en-US/) for display of the bar chart
+-   Bootstrapped with [Create React App](https://create-react-app.dev/)
 -   The application is properly tested(Unit tests) using
     -   [Jest](https://jestjs.io/), and
     -   [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 
 ## How does this application work
 
-As mentioned above already, user can give feedback on a product/service through this application. To give a feedback/review on a product, the user must provide the following information:
+As mentioned earlier, users can give feedback on a product/service through this application. To give a feedback/review on a product, the user must provide the following information:
 
--   Author: The name of the author (must contain atleast one character)
+-   Author: The name of the author (must be atleast one character)
 -   Email: A valid email address (validated with regex)
 -   Rating: A value between 1 and 5
 -   Comment: Text describing the feedback/review
@@ -115,7 +116,7 @@ npm install
 npm test
 ```
 
-##### Using npm: Start the Application locally
+#### Using npm: Start the Application locally
 
 1. Install the dependencies with:
 
@@ -141,8 +142,13 @@ Visit `localhost:3000` on your favourite browser to view the application
 
 ## Some Choices Made:
 
-1. Used the atomic design pattern to ease the categorization of components, avoid the unnecessary nesting across the application, promote component reusability, and ease of testing
-2. Testing hooks is debatable. However, the choice was made in this case as it handles most of the logic on the page
+1. Used the atomic design pattern for many reasons including:
+    - to ease the categorization/classification of components
+    - avoid unnecessary nesting of components across the application
+    - promote component reusability
+    - ease of testing
+2. Testing hooks is debatable. However, the choice was made in this case as `useHome` hook handles some important logic
+3. To improve the UX: Expectations for an input field are immediately validated, against the current input with feedback displayed once the user starts typing in an input field. This helps the user immediately understand what is required in a specific field
 
 ## What could have been done better:
 
