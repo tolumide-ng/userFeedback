@@ -82,7 +82,7 @@ docker-compose up test
 1. To run the tests with docker-compose, simply run: (on Ubuntu)
 
 ```
-sudo docker-compose up test
+sudo docker compose up test
 ```
 
 #### Using Docker Compose: Start the Application locally
@@ -96,7 +96,7 @@ docker-compose up web
 1. To start the application with docker-compose, simply run (on Ubuntu):
 
 ```
-sudo docker-compose up web
+sudo docker compose up web
 ```
 
 ### Using Docker Compose: Shutting down the Application
@@ -111,7 +111,7 @@ docker-compose down
 2. Run (on Ubuntu):
 
 ```
-sudo docker-compose down
+sudo docker compose down
 ```
 
 ### Using npm:
