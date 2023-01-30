@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { FeedbackResults } from "./FeedbackResults";
-import { FeedbackWithId } from "../../../types";
+import { FeedbackWithId } from "../../../../types";
 
 jest.mock("../../molecules/Chart/Chart.tsx", () => ({
     Chart: () => {

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ChangeElement, FeedbackWithErrors } from "../../../types";
+import { ChangeElement, FeedbackWithErrors } from "../../../../types";
 import { Button } from "../../atoms/Button/Button";
 import { Input } from "../../atoms/Input/Input";
 import { SelectOption } from "../../atoms/Select/Select";

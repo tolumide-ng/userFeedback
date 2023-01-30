@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { CommentsPage } from "./components/Pages/Comments/Comments";
 import { HomePage } from "./components/Pages/Home/Home";
 import { ContextProvider } from "./components/store";
-import { PageWrapper } from "./UI/templates/PageWrapper/PageWrapper";
+import { PageWrapper } from "./components/UI/templates/PageWrapper/PageWrapper";
 import "./index.css";
 
 const root = ReactDOM.createRoot(

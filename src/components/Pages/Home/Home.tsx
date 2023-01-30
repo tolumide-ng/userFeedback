@@ -1,4 +1,4 @@
-import { FeedbackForm } from "../../../UI/organisms/FeedbackForm/FeedbackForm";
+import { FeedbackForm } from "../../UI/organisms/FeedbackForm/FeedbackForm";
 import { useHome } from "./useHome/useHome";
 
 export const HomePage = () => {

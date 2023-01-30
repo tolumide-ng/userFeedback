@@ -7,7 +7,7 @@ import {
     XAxis,
     YAxis,
 } from "recharts";
-import { Distribution } from "../../../types";
+import { Distribution } from "../../../../types";
 import styles from "./Chart.module.css";
 
 type ChartProps = {

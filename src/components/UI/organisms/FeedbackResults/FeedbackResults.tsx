@@ -1,4 +1,4 @@
-import { Distribution, FeedbackWithId } from "../../../types";
+import { Distribution, FeedbackWithId } from "../../../../types";
 import { Chart } from "../../molecules/Chart/Chart";
 import { Comment } from "../../molecules/Comment/Comment";
 import styles from "./FeedbackResults.module.css";
